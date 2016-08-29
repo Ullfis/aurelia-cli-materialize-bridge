@@ -22,5 +22,16 @@ export function configure(aurelia: Aurelia) {
     aurelia.use.plugin('aurelia-testing');
   }
 
+  aurelia.use
+  .plugin('aurelia-validation')
+  .plugin('aurelia-materialize-bridge', b => b
+    .useInput()
+    .useButton()
+    .useDropdown()
+    .useWaves()
+    .useNavbar());
+
+    // .useAll());
+
   aurelia.start().then(() => aurelia.setRoot());
 }
