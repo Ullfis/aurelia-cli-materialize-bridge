@@ -1,3 +1,27 @@
 <template>
-  <h1>${message}</h1>
+  <require from="../node_modules/materialize-css/dist/css/materialize.css"></require>
+
+  <md-navbar>
+    <a href="#" class="brand-logo"><span>Brand logo</span></a>
+    <ul class="hide-on-med-and-down right">
+      <li md-waves><a>About</a></li>
+      <li md-waves><a>Installation</a></li>
+      <li md-waves><a>Project Status</a></li>
+    </ul>
+  </md-navbar>
+
+  <div class="container">
+    <h1>${message}</h1>
+
+    <a md-button md-waves md-dropdown="activates: dropdown1;">drop me!</a>
+    <ul id="dropdown1">
+      <li><a click.trigger="showToast('one')">one</a></li>
+      <li><a click.trigger="showToast('two')">two</a></li>
+      <li class="divider"></li>
+      <li><a click.trigger="showToast('three')">three</a></li>
+    </ul>
+
+    <button md-button md-waves>Test Waves</button>
+
+  </div>
 </template>
