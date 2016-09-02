@@ -20,13 +20,14 @@
 - add [rbuild.js](rbuild.js) and [materialize-css.js](materialize-css.js)
 - ./node_modules/.bin/r.js -o rbuild.js
 
+
 ##### install aurelia-materialize-bridge
 
-- npm install aurelia-validation --save  (??)
-
 - npm install aurelia-materialize-bridge --save
-  - or until this [pull request](https://github.com/aurelia-ui-toolkits/aurelia-materialize-bridge/pull/238) fixes waves effect:
-  - npm install github:ullfis/aurelia-materialize-bridge#build-branch --save
+
+##### if you need validation
+
+- npm install aurelia-validation --save
 
 ##### edit aurelia_project/aurelia.json
 
@@ -57,11 +58,6 @@
   "name": "jquery",
   "path": "../node_modules/jquery/dist",
   "main": "jquery.min"
-},
-{
-  "name": "aurelia-validation",
-  "path": "../node_modules/aurelia-validation/dist/amd",
-  "main": "aurelia-validation"
 },
 {
   "name": "materialize-css",
@@ -120,11 +116,28 @@
 }
 ```
 
+- for validation add this
+
+```json
+{
+  "name": "aurelia-validation",
+  "path": "../node_modules/aurelia-validation/dist/amd",
+  "main": "aurelia-validation"
+},
+```
+
 ##### main.ts
 
 ```javascript
 aurelia.use.plugin('aurelia-materialize-bridge', b => b.useAll());
 ```
+
+- for validation:
+
+```javascript
+aurelia.use.plugin('aurelia-validation');
+```
+
 
 ##### app.html
 ```html
